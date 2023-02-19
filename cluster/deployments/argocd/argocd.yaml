@@ -8,7 +8,7 @@ spec:
   source:
     path: /tree/main/charts/argo-cd
     repoURL: https://github.com/argoproj/argo-helm
-    targetRevision: 5.21.0
+    targetRevision: main
     helm:
       releaseName: argo-cd
   destination:
