@@ -11,6 +11,9 @@ spec:
     targetRevision: 21.1.0
     helm:
       releaseName: traefik
+      parameters:
+        - name: ingressRoute.dashboard.entryPoints
+          value: ["traefik", "web"]
   destination:
     server: "https://kubernetes.default.svc"
     namespace: traefik
