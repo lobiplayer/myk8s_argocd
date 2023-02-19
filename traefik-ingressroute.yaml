@@ -1,0 +1,27 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  annotations:
+    meta.helm.sh/release-name: traefik
+    meta.helm.sh/release-namespace: traefik
+  creationTimestamp: "2023-02-19T17:08:18Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: traefik-traefik
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: traefik
+    helm.sh/chart: traefik-21.1.0
+  name: traefik-dashboard
+  namespace: traefik
+  resourceVersion: "1549"
+  uid: 518a67bd-f468-4f9f-8bdb-2da010b6ae6d
+spec:
+  entryPoints:
+  - traefik
+  - web
+  routes:
+  - kind: Rule
+    match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+    services:
+    - kind: TraefikService
+      name: api@internal
