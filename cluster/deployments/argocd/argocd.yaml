@@ -6,8 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    chart: argo-cd
-    repoURL: https://github.com/argoproj/argo-helm/tree/main/charts
+    repoURL: https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
     helm:
       releaseName: argo-cd
   destination:
