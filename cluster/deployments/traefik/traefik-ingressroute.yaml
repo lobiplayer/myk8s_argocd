@@ -5,11 +5,11 @@ metadata:
   namespace: traefik
 spec:
   entryPoints:
-  - traefik
-  - web
+    - traefik
+    - web
   routes:
-  - kind: Rule
-    match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
-    services:
-    - kind: TraefikService
-      name: api@internal
+    - kind: Rule
+      match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+      services:
+        - kind: TraefikService
+          name: api@internal
