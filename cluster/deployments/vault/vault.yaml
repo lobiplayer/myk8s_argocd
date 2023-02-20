@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: vault
+    repoURL: https://helm.releases.hashicorp.com
+    targetRevision: 0.23.0
+    helm:
+      releaseName: vault
+      parameters:
+      - name: injector.externalVaultAddr"
+        value: "http://10.42.42.201:8200"
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: argocd
