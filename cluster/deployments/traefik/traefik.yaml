@@ -12,8 +12,10 @@ spec:
     helm:
       releaseName: traefik
       parameters:
-        - name: ingressRoute.dashboard.entryPoints
-          value: '["traefik", "web"]'
+        - name: ingressRoute.dashboard.enabled
+          value: "false"
+        # - name: ingressRoute.dashboard.entryPoints
+        #   value: '["traefik", "web"]'
   destination:
     server: "https://kubernetes.default.svc"
     namespace: traefik
