@@ -13,7 +13,7 @@ spec:
       releaseName: argo-cd
       parameters:
       - name: configs.params."server\.insecure"
-        value: true
+        value: "true"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: argocd
