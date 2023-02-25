@@ -5,8 +5,9 @@ metadata:
   namespace: default
 spec:
   vault:
-    server: http://vault.default
-    path: pki/sign/example-dot-com
+    server: http://10.42.42.201
+    # server: http://vault.default
+    path: pki/creds/myk8s-dot-net
     auth:
       kubernetes:
         mountPath: /v1/auth/kubernetes
