@@ -1,0 +1,21 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: k8s-dashboard-ingress
+  namespace: kube-system
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(\`k8s.xyz.org\`) # Hostname to match
+      kind: Rule
+      services: 
+        - name: traefik-kubernetes-dashboard
+          port: 8443
+          scheme: https
+          passHostHeader: false
+      middlewares:
+        - name: auth
+          namespace: kube-system
+  tls:
+    secretName: cert
