@@ -8,7 +8,6 @@ spec:
     server: http://10.10.10.201:8200
     path: pki/sign/myk8s-dot-net
     caBundle: |
-      -----BEGIN CERTIFICATE-----
       MIIDLzCCAhegAwIBAgIULYQifxuAaxVKBz6Yur2tWDqvI/4wDQYJKoZIhvcNAQEL
       BQAwFDESMBAGA1UEAxMJbXlrOHMubmV0MB4XDTIzMDQwMTE3MjE1OFoXDTI0MDMz
       MTE3MjIyN1owFDESMBAGA1UEAxMJbXlrOHMubmV0MIIBIjANBgkqhkiG9w0BAQEF
@@ -27,7 +26,6 @@ spec:
       JtIpU6/4a9AIF7n64b50RrOez0FrmM3xg7c4aXcDRYpJB8BdsCHlXJfbwN5adSmE
       9IQv1YDVOa12OPE19dJUzWQxaUUkOfPQD43P//bkflcH6tHw+7Amd+0ly63sWdSK
       C0uw
-      -----END CERTIFICATE-----
     auth:
       kubernetes:
         mountPath: /v1/auth/kubernetes
