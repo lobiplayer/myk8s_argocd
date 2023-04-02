@@ -32,7 +32,7 @@ spec:
     auth:
       kubernetes:
         mountPath: /v1/auth/kubernetes
-        role: issuer
+        role: default
         secretRef:
           name: issuer-token-lmzpj
           key: token
