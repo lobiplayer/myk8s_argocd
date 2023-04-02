@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   entryPoints:
-    - web
+    - websecure
   routes:
     - kind: Rule
       match: Host(`argocd.myk8s.net`)
@@ -20,5 +20,5 @@ spec:
         - name: my-argo-cd-argocd-server
           port: 80
           scheme: h2c
-  # tls:
-  #   certResolver: default
+  tls:
+    certResolver: default
