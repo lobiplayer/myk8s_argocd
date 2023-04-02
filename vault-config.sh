@@ -1,6 +1,9 @@
-export SA_SECRET_NAME=$(kubectl -n default get secrets --output=json | jq -r '.items[].metadata | select(.name|startswith("issuer-token--")).name')
-export SA_JWT_TOKEN=$(kubectl -n default get secret issuer-token-lmzpj --output 'go-template={{ .data.token }}' | base64 --decode)
-export SA_CA_CRT=$(kubectl config view --raw --minify --flatten --output 'jsonpath={.clusters[].cluster.certificate-authority-data}' | base64 --decode)
-export K8S_HOST=$(kubectl config view --raw --minify --flatten --output 'jsonpath={.clusters[].cluster.server}')
+TOKEN_REVIEW_JWT=eyJhbGciOiJSUzI1NiIsImtpZCI6Ik10RzBMRlgydVloTU9WQld2SnM5cFFNdGVkWmtzWTRFS2wzQjB2ZXN5dVUifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6Imlzc3Vlci10b2tlbi1sbXpwaiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJpc3N1ZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIwODExY2I2Yi1jNjdhLTQwMzktOGQxYS05NWRiNzQyNTNjMmEiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDppc3N1ZXIifQ.IPapMX-hdj3ErT3_Q2bYdWovwfjqCd-OoyoPSJGzfhZp1LcLuLDWZcuLgQ2WJwJrx7LUkSkUvXvnvYRljQn3WoXIyiEzHD87QxRM8qyf6Kr6jNshsHo71i_UYbD3-pH7x99NnxjjHbDX_Y1MphExAw66-z-LRtYqorv37ZIp1uxK5G5wTFqgob_IQGiS3OsEQV8eXjaaaGTUyWnzfoo-NN3X3M7TfMYIsPDswgtgjpcG20U1soYuIF18O_XY65e-aLblCobcnWQGoe908_vMZrgFAXz3PYFWAgHJ6izCnJ5lw4ovVwZDAaLQEXDwRdT2hLYhuORGg-wCuAZmZyrX3A
+KUBE_CA_CERT=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.certificate-authority-data}' | base64 --decode)
+KUBE_HOST="10.10.10.100:8200"
 
-vault write auth/kubernetes/config token_reviewer_jwt="$SA_JWT_TOKEN" kubernetes_host="$K8S_HOST" kubernetes_ca_cert="$SA_CA_CRT" disable_iss_validation="true" disable_local_ca_jwt="true" issuer="https://kubernetes.default.svc.cluster.local"
+vault write auth/kubernetes/config \
+     token_reviewer_jwt="$TOKEN_REVIEW_JWT" \
+     kubernetes_host="$KUBE_HOST" \
+     kubernetes_ca_cert="$KUBE_CA_CERT" \
+     issuer="https://kubernetes.default.svc.cluster.local"
