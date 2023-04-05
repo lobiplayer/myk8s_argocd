@@ -23,5 +23,5 @@ spec:
     host: myk8s.net
   tls:
   - hosts:
-    - myk8s.net
+    - www.myk8s.net
     secretName: argocd-secret # do not change, this is provided by Argo CD
