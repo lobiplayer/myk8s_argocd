@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: traefik
+    repoURL: https://traefik.github.io/charts/
+    targetRevision: 22.0.0
+    helm:
+      releaseName: traefik
+      parameters:
+        - name: "ingressRoute.dashboard.enabled"
+          value: "false"
+        # - name: ingressRoute.dashboard.entryPoints
+        #   value: '["traefik", "web"]'
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: traefik
