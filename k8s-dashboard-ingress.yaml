@@ -2,20 +2,20 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: k8s-dashboard-ingress
-  namespace: kube-system
+  namespace: kubernetes-dashboard
 spec:
   entryPoints:
-    - websecure
+    - web
   routes:
-    - match: Host(\`k8s.xyz.org\`) # Hostname to match
+    - match: PathPrefix(`/k8sdashboard`)
       kind: Rule
       services: 
-        - name: traefik-kubernetes-dashboard
+        - name: kubernetes-dashboard
           port: 8443
-          scheme: https
-          passHostHeader: false
-      middlewares:
-        - name: auth
-          namespace: kube-system
-  tls:
-    secretName: cert
+          # scheme: https
+          # passHostHeader: false
+      # middlewares:
+      #   - name: auth
+      #     namespace: kube-system
+  # tls:
+  #   secretName: cert
