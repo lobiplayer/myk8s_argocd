@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    chart: nginx
+    chart: my-repo/nginx
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 1.23.4
     helm:
