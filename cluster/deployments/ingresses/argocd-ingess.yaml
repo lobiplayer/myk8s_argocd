@@ -20,7 +20,7 @@ spec:
             name: my-argo-cd-argocd-server
             port:
               number: 443
-    host: myk8s.net
+    host: www.myk8s.net
   tls:
   - hosts:
     - www.myk8s.net
