@@ -20,8 +20,8 @@ spec:
             name: my-argo-cd-argocd-server
             port:
               number: 443
-    host: www.myk8s.net
+    host: myk8s.net
   tls:
   - hosts:
-    - www.myk8s.net
+    - myk8s.net
     secretName: argocd-secret # do not change, this is provided by Argo CD

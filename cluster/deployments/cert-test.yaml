@@ -7,6 +7,6 @@ spec:
   secretName: myk8s-net-tls
   issuerRef:
     name: vault-issuer
-  commonName: www.myk8s.net
+  # commonName: www.myk8s.net
   dnsNames:
   - www.myk8s.net
