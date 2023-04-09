@@ -1,20 +1,15 @@
-apiVersion: networking.k8s.io/v1
+
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: mario-ingress
-  namespace: argocd
   annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    # ingress.kubernetes.io/rewrite-target: /mario
 spec:
   rules:
   - http:
       paths:
-      - path: /mario
-        pathType: Prefix
-        backend:
-          service:
-            name: mario-deployment
-            port:
-              number: 8080
-    host: argo.myk8s.net
+        - path: /mario
+          backend:
+            serviceName: mario-deployement
+            servicePort: 8080
