@@ -22,7 +22,7 @@ spec:
             name: my-argo-cd-argocd-server
             port:
               name: http
-    host: myk8s.net
+    host: argo.myk8s.net
   tls:
   - hosts:
     - myk8s.net
