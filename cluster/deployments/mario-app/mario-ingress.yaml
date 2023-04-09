@@ -18,4 +18,5 @@ spec:
             name: mario-service
             port:
               number: 8080
+    host: argo.myk8s.net
     host: myk8s.net
