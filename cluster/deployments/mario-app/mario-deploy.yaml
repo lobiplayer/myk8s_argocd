@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: mario
-        image: nginx
+        image: kaminskypavel/mario
         ports:
         - containerPort: 8080
