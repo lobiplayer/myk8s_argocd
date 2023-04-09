@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: mario
-        image: docker.io/kaminskpavel/mario
+        image: kaminskpavel/mario:latest
         ports:
         - containerPort: 8080
