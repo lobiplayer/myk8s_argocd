@@ -12,8 +12,8 @@ spec:
     helm:
       releaseName: vault
       parameters:
-      - name: "injector.externalVaultAddr"
-        value: "http://10.10.10.201:8200"
+      - name: "server.insecure"
+        value: "true"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: vault
