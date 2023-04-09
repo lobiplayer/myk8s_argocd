@@ -14,7 +14,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: mario-service
+            name: mario-deployment
             port:
               number: 8080
     host: argo.myk8s.net
