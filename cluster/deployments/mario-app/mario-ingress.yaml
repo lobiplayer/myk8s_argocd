@@ -17,3 +17,4 @@ spec:
             name: mario-service
             port:
               number: 8080
+    host: myk8s.net
