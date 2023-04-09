@@ -1,15 +1,14 @@
-
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: mario-ingress
-  annotations:
-    # ingress.kubernetes.io/rewrite-target: /mario
+  name: ingress-mario
 spec:
+  ingressClassName: nginx
   rules:
-  - http:
+  - host: myk8s.net
+    http:
       paths:
-        - path: /mario
-          backend:
-            serviceName: mario-deployement
-            servicePort: 8080
+      - path: /mario
+        backend:
+          serviceName: mario-deployement
+          servicePort: 8080
