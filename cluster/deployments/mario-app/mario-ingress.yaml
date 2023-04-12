@@ -2,14 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-mario
-  namespace: default
+  labels:
 spec:
-  ingressClassName: nginx
   rules:
   - host: myk8s.net
     http:
       paths:
-      - path: /mario
+      - path: /
+        pathType: Prefix
         backend:
-          serviceName: mario-deployement
-          servicePort: 8080
+          service:
+            name: myservicea
+            port:
+              number: 80
+  ingressClassName: nginx
