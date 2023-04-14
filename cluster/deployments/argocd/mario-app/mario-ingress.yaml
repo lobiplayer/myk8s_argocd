@@ -9,11 +9,11 @@ spec:
   - host: myk8s.net
     http:
       paths:
-      - path: /
+      - path: /mario
         pathType: Prefix
         backend:
           service:
-            name: myservicea
+            name: mario-deployment
             port:
-              number: 80
+              number: 8080
   ingressClassName: nginx
