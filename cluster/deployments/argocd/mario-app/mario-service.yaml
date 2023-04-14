@@ -6,13 +6,6 @@ metadata:
   name: mario-deployment
   namespace: default
 spec:
-  clusterIP: 10.43.29.222
-  clusterIPs:
-  - 10.43.29.222
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
   - port: 8080
     protocol: TCP
