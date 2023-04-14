@@ -3,7 +3,6 @@ kind: Service
 metadata:
   labels:
     app: mario
-    argocd.argoproj.io/instance: root
   name: mario-deployment
   namespace: default
 spec:
