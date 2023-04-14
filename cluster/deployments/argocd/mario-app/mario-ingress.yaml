@@ -3,11 +3,12 @@ kind: Ingress
 metadata:
   name: ingress-mario
   namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "nginx" 
   labels:
 spec:
   rules:
-  - host: myk8s.net
-    http:
+    - http:
       paths:
       - path: /mario
         pathType: Prefix
