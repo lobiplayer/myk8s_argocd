@@ -6,7 +6,7 @@ metadata:
   labels:
 spec:
   rules:
-  - host: myk8s.net
+  - host: masternode1
     http:
       paths:
       - path: /mario
@@ -16,4 +16,4 @@ spec:
             name: mario-deployment
             port:
               number: 8080
-  ingressClassName: nginx
+  ingressClassName: traefik
