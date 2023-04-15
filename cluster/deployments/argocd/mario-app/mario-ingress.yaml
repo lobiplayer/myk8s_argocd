@@ -6,13 +6,12 @@ metadata:
   labels:
 spec:
   rules:
-  - host: masternode1
-    http:
+    - http:
       paths:
       - path: /mario
         pathType: Prefix
         backend:
-          service:
+          service: 
             name: mario-deployment
             port:
               number: 8080
