@@ -6,7 +6,8 @@ metadata:
   labels:
 spec:
   rules:
-    - http:
+  - host: myk8s.net
+    http:
       paths:
       - path: /mario
         pathType: Prefix
