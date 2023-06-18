@@ -13,19 +13,7 @@ spec:
       releaseName: vault
       parameters:
       - name: "server.insecure"
-        value: "true"
-      - name: "server.standalone.config"
-        value: |
-          "ui = true
-           log_level = "Debug"
-          listener "tcp" {
-            tls_disable = 1
-            address = "[::]:8200"
-            cluster_address = "[::]:8201"
-          }
-          storage "file" {
-            path = "/vault/data"
-          }"    
+        value: "true"  
   destination:
     server: "https://kubernetes.default.svc"
     namespace: vault
