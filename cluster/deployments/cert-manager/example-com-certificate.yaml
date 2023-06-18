@@ -5,8 +5,9 @@ metadata:
   namespace: default
 spec:
   secretName: example-com-tls
-  cluserIssuerRef:
+  issuerRef:
     name: vault-clusterissuer
+    kind: ClusterIssuer
   commonName: www.example.com
   dnsNames:
   - www.example.com
