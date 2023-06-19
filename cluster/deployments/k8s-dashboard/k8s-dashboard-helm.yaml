@@ -13,4 +13,4 @@ spec:
       releaseName: k8s-dashboard
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: nginx
+    namespace: k8s-dashboard
