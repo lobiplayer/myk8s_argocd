@@ -12,7 +12,7 @@ spec:
     helm:
       releaseName: argocd
       parameters:
-      - name: "configs.params."server\.insecure""
+      - name: "configs.params.\"server\\.insecure\""
         value: "true"
   destination:
     server: "https://kubernetes.default.svc"
