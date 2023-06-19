@@ -15,6 +15,7 @@ vault write pki/config/urls \
 vault write pki/roles/myk8s-dot-net \
     allowed_domains=myk8s.net \
     allow_subdomains=true \
+    require_cn=false \
     max_ttl=72h
 
 vault policy write pki - <<EOF
