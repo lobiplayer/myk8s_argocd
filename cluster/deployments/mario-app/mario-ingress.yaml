@@ -5,6 +5,7 @@ metadata:
   namespace: default
   labels:
 spec:
+  ingressClassName: nginx
   rules:
   - host: mario.myk8s.net
     http:
