@@ -10,7 +10,7 @@ spec:
     repoURL: https://github.com/argoproj/argo-helm
     targetRevision: main
     helm:
-      releaseName: argo-cd
+      releaseName: argocd
       parameters:
       - name: "configs.params."server\.insecure""
         value: "true"
