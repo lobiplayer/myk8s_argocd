@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+  namespace: argocd
+  annotations:
+    cert-manager.io/cluster-issuer: vault-clusterissuer
+    kubernetes.io/tls-acme: "true"
+spec:
+  rules:
+    - host: argocd.myk8s.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 443
+  tls:
+  - hosts:
+    - argocd.myk8s.net
+    secretName: argocd-secret # do not change, this is provided by Argo CD
