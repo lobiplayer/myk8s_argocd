@@ -17,7 +17,7 @@ spec:
             pathType: Exact
             backend:
               service:
-                name: my-argo-cd-argocd-server
+                name: argocd-server
                 port:
                   number: 443
   tls:
