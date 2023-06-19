@@ -22,4 +22,4 @@ spec:
   tls:
   - hosts:
     - dashboard.myk8s.net
-    secretName: k8s-dashboard-ingress-cert
+    secretName: kubernetes-dashboard-ingress-cert
