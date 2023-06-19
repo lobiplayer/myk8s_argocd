@@ -4,6 +4,8 @@ metadata:
   name: k8s-dashboard-ingress
   namespace: default
   labels:
+  annotations:
+    cert-manager.io/cluster-issuer: vault-clusterissuer
 spec:
   ingressClassName: nginx
   rules:
@@ -17,3 +19,7 @@ spec:
             name: k8s-dashboard-kubernetes-dashboard
             port:
               number: 443
+  tls:
+  - hosts:
+    - dashboard.myk8s.net
+    secretName: k8s-dashboard-ingress-cert
