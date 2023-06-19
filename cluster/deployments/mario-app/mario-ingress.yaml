@@ -16,4 +16,3 @@ spec:
             name: mario-deployment
             port:
               number: 8080
-  ingressClassName: traefik
