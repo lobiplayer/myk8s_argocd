@@ -6,10 +6,10 @@ metadata:
   labels:
 spec:
   rules:
-  - host: myk8s.net
+  - host: mario.myk8s.net
     http:
       paths:
-      - path: /mario
+      - path: /
         pathType: Prefix
         backend:
           service: 
