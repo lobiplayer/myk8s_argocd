@@ -11,9 +11,9 @@ spec:
     targetRevision: main
     helm:
       releaseName: argocd
-      parameters:
-      - name: "configs.params.\"server\\.insecure\""
-        value: "true"
+      # parameters:
+      # - name: "configs.params.\"server\\.insecure\""
+      #   value: "true"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: argocd
