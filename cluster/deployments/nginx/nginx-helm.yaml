@@ -4,6 +4,7 @@ metadata:
   name: nginx
   namespace: argocd
 spec:
+  ingressClassName: nginx
   project: default
   source:
     chart: ingress-nginx
