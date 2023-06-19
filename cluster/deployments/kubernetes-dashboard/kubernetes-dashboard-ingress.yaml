@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: k8s-dashboard-ingress
-  namespace: default
+  name: kubernetes-dashboard-ingress
+  namespace: kubernetes-dashboard
   labels:
   annotations:
     cert-manager.io/cluster-issuer: vault-clusterissuer
@@ -16,7 +16,7 @@ spec:
         pathType: Prefix
         backend:
           service: 
-            name: k8s-dashboard-kubernetes-dashboard
+            name: kubernetes-dashboard-kubernetes-dashboard
             port:
               number: 443
   tls:
