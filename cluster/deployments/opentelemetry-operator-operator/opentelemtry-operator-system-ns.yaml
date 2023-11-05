@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: opentelemetry-operator-system
+  name: opentelemetry-demo
   labels:
-    name: opentelemetry-operator-system
+    name: opentelemetry-demo
