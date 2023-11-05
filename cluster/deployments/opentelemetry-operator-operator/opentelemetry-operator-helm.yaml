@@ -8,7 +8,7 @@ spec:
   source:
     chart: opentelemetry-operator
     repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
-    targetRevision: 0.88.0
+    targetRevision: main
     helm:
       releaseName: opentelemetry-demo  
   destination:
