@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: myk8s.net
+  namespace: default
+spec:
+  secretName: myk8s.net-tls
+  issuerRef:
+    name: vault-clusterissuer
+  commonName: myk8s.net
+  dnsNames:
+  - myk8s.net
