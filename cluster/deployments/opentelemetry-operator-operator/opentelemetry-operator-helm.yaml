@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    chart: opentelemetry-demo
+    chart: open-telemetry/opentelemetry-demo
     repoURL: https://open-telemetry.github.io/opentelemetry-helm-charts
     targetRevision: main
     helm:
