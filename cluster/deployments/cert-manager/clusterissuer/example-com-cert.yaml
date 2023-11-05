@@ -5,8 +5,9 @@ metadata:
   namespace: default
 spec:
   secretName: myk8s.net-tls
-ClusterIssuerRef:
+issuerRef:
     name: vault-clusterissuer
+    kind: ClusterIssuer
   commonName: myk8s.net
   dnsNames:
   - myk8s.net
