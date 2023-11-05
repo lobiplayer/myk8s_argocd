@@ -1,1 +1,11 @@
 passwdargo
+passwords/*
+
+vault write pki/config/urls \
+    issuing_certificates="http://vault.vault:8200/v1/pki/ca" \
+    crl_distribution_points="http://vault.vault:8200/v1/pki/crl"
+
+vault write pki/roles/myk8s-dot-net \
+    allowed_domains=myk8s.net \
+    allow_subdomains=true \
+    max_ttl=72h

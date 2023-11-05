@@ -23,3 +23,9 @@ path "pki*"                        { capabilities = ["read", "list"] }
 path "pki/sign/myk8s-dot-net"    { capabilities = ["create", "update"] }
 path "pki/issue/myk8s-dot-net"   { capabilities = ["create"] }
 EOF
+
+vault write auth/kubernetes/role/clusterissuer \
+    bound_service_account_names=clusterissuer \
+    bound_service_account_namespaces=* \
+    policies=pki \
+    ttl=20m
