@@ -1,25 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitlab
-  namespace: gitlab
+  name: vault
+  namespace: argocd
 spec:
   project: default
   source:
-    chart: gitlab
-    repoURL: http://charts.gitlab.io/
-    targetRevision: 16.5.1
+    chart: z
+    repoURL: https://helm.releases.hashicorp.com
+    targetRevision: 0.26.1
     helm:
-      releaseName: gitlab
+      releaseName: vault
       parameters:
-      - name: "global.hosts.domain"
-        value: "myk8s.net"  
-      - name: "global.hosts.externalIP"
-        value: "10.10.10.100"  
-      - name: "certmanager-issuer.email"
-        value: "me@example.com"
-      - name: "postgresql.image.tag"
-        value: "13.6.0"  
+      - name: "server.insecure"
+        value: "true"  
   destination:
     server: "https://kubernetes.default.svc"
     namespace: vault
