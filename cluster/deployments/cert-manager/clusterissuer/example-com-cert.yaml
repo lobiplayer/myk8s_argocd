@@ -8,6 +8,6 @@ spec:
   issuerRef:
       name: vault-clusterissuer
       kind: ClusterIssuer
-  commonName: myk8s.net
+  commonName: test.myk8s.net
   dnsNames:
   - myk8s.net
