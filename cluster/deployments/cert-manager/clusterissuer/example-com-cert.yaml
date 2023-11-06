@@ -10,4 +10,4 @@ spec:
       kind: ClusterIssuer
   commonName: test.myk8s.net
   dnsNames:
-  - rwar,myk8s.net
+  - test.myk8s.net
