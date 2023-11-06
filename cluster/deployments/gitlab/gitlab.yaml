@@ -22,4 +22,4 @@ spec:
         value: "13.6.0"  
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: vault
+    namespace: gitlab
