@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: myk8s.net
+  name: test-myk8s-dot-net
   namespace: default
 spec:
   secretName: myk8s.net-tls
@@ -10,4 +10,4 @@ spec:
       kind: ClusterIssuer
   commonName: test.myk8s.net
   dnsNames:
-  - myk8s.net
+  - rwar,myk8s.net
