@@ -14,9 +14,11 @@ vault write pki/config/urls \
     issuing_certificates="http://vault.vault:8200/v1/pki/ca" \
     crl_distribution_points="http://vault.vault:8200/v1/pki/crl"
 
+# Requiree common name is important here and is not mentioned in Hashicorp tutorial
 vault write pki/roles/myk8s-dot-net \
     allowed_domains=myk8s.net \
     allow_subdomains=true \
+    require_cn=false \
     max_ttl=72h
 
 vault policy write pki - <<EOF
@@ -31,8 +33,6 @@ vault auth enable kubernetes
 
 vault write auth/kubernetes/config \
     kubernetes_host="https://$KUBERNETES_PORT_443_TCP_ADDR:443"
-
-
 
 vault write auth/kubernetes/role/clusterissuer \
     bound_service_account_names=clusterissuer \

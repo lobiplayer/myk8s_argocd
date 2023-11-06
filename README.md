@@ -20,3 +20,11 @@ We do this by adding root.yaml in the argocd namespace.
 kubectl apply /cluster/root.yaml
 ```
 
+## Vault and Cert-Manager
+
+Vault and Cert-Manger will be installed via helm. All the necessary configurations for Cert-Manager are covered in the yamls.
+For configuring the PKI in the vault. Exec into the pod and execute the commands in the pki_script.sh file.
+```
+kubectl exec --stdin=true --tty=true vault-0 -n vault -- /bin/sh
+```
+

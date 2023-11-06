@@ -7,7 +7,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: vault-clusterissuer
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    
     kubernetes.io/ingress.class: "nginx"
 spec:
   ingressClassName: nginx
