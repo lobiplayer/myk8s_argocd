@@ -23,7 +23,9 @@ spec:
       - name: "postgresql.image.tag"
         value: "13.6.0" 
       - name: "global.edition"
-        value: "ce"  
+        value: "ce"
+      - namme: "upgradeCheck.enabled"
+        value: "false"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: gitlab
